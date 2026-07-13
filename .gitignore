@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Node
+node_modules/
+.next/
+dist/
+*.tsbuildinfo
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Data directories (MinIO, Postgres, ClickHouse, Kafka volumes, etc.)
+data/
+*.db
+*.sqlite
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

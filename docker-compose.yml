@@ -1,0 +1,40 @@
+# Real-Time Lakehouse + AI Platform — service stack
+#
+# PHASE 0: structure only. Services are commented placeholders; each gets
+# uncommented and configured in the phase that introduces it (see CLAUDE.md
+# for the current phase marker and docs/build_plan.md for the schedule).
+
+name: lakehouse-platform
+
+services: {}
+
+  # --- Phase 1, Week 1: durable log -------------------------------------
+  # redpanda:
+  #   image: redpandadata/redpanda   # Kafka-compatible, single binary
+  #   ports: ["9092:9092", "9644:9644"]
+  #   Notes: topic partitioning strategy is a human decision (see build plan).
+
+  # --- Phase 1, Week 2: stream processing -------------------------------
+  # flink-jobmanager:
+  #   image: flink
+  #   ports: ["8081:8081"]
+  # flink-taskmanager:
+  #   image: flink
+  #   Notes: checkpointing + exactly-once config lands here.
+
+  # --- Phase 1, Week 3: lakehouse object store ---------------------------
+  # minio:
+  #   image: minio/minio             # S3-compatible backing for Iceberg
+  #   ports: ["9000:9000", "9001:9001"]
+
+  # --- Phase 1, Week 3: OLTP dimension source + CDC ----------------------
+  # postgres:
+  #   image: postgres:16             # tracked users / event types / topics
+  #   ports: ["5432:5432"]
+  #   Notes: wal_level=logical required for Debezium.
+  # (Debezium runs via Kafka Connect against Redpanda; added in Week 3.)
+
+  # --- Phase 2, Week 5: real-time OLAP serving ---------------------------
+  # clickhouse:
+  #   image: clickhouse/clickhouse-server
+  #   ports: ["8123:8123", "9009:9000"]
