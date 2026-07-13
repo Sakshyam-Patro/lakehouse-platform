@@ -32,6 +32,9 @@ I (Sakshyam) am building this **to learn**. Rules for Claude:
 - **I make the architecture decisions; you implement against them.**
 - Prefer **boring, readable code** over clever code.
 - At the **end of each session, quiz me with 3 questions** about what we built.
+- At the **start of each session, re-ask unanswered questions from
+  `docs/quiz_log.md`** (with variations); mark them ✅ only when I answer
+  correctly in my own words.
 
 ## Decided — do not revisit (from docs/design_decisions.md)
 
