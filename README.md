@@ -9,7 +9,7 @@ full production layer (evals in CI, tracing, load tests, failure postmortems) on
 One integrated system deliberately covering three pillars: **Data Engineering**,
 **AI Engineering**, and **System Design**.
 
-> 🚧 **Status: in active development** (July → October 2026, ~12–16 weeks part-time).
+> 🚧 **Status: in active development.**
 > Built design-doc-first, executed in phases — each phase independently runnable and
 > demoable. The full build plan is public: [docs/build_plan.md](docs/build_plan.md).
 > Locked design decisions with reasoning: [docs/design_decisions.md](docs/design_decisions.md).
